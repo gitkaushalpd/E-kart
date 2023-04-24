@@ -1,0 +1,11 @@
+header {
+  /* text-align: center; */
+  color: white;
+  /* position: fixed; */
+  width: -webkit-fill-available;
+  /* margin-top: 1.5em; */
+}
+
+.logo {
+  height: 50px;
+}

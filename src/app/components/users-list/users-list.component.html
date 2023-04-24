@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Userlist</div>
+      <div class="card-body">
+        <!-- <h4>Userlist</h4> -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userlist">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.number }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="card-footer">Footer</div> -->
+    </div>
+  </div>
+  <!-- <div class="col-md-1"></div> -->
+  <div class="col-md-4">
+    <div class="card bg-light text-dark">
+      <div class="card-header">Add User</div>
+      <div class="card-body">
+        <!-- <h4>Add User</h4> -->
+        <form [formGroup]="kaushal" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="name"> Name </label>
+            <input id="name" type="text" formControlName="name" />
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="address"> Email </label>
+            <input id="address" type="text" formControlName="email" />
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="address"> Mobile </label>
+            <input id="address" type="number" formControlName="number" />
+          </div>
+
+          <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+      </div>
+      <!-- <div class="card-footer">Footer</div> -->
+    </div>
+
+    <!-- <span class="vl"></span> -->
+  </div>
+</div>
+<!-- <form>
+  <label for="uname"> Name:</label><br />
+  <input type="text" id="uname" name="uname" value="" /><br />
+  <label for="uemail">Email:</label><br />
+  <input type="text" id="uemail" name="uemail" value="" /><br />
+  <label for="unumber">Number:</label><br />
+  <input type="text" id="unumber" name="unumber" value="" /><br />
+</form> -->

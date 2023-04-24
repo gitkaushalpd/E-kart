@@ -1,0 +1,16 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of itemsList">
+      <td>{{ item.name }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.price }}</td>
+    </tr>
+  </tbody>
+</table>
