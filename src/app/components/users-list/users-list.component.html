@@ -17,6 +17,12 @@
               <td>{{ user.name }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.number }}</td>
+              <td>
+                <button class="btn" (click)="deleteUser(user)">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <!-- <button class="btn btn-primary" type="submit">Delete</button> -->
+              </td>
             </tr>
           </tbody>
         </table>
@@ -49,17 +55,6 @@
           <button class="btn btn-primary" type="submit">Add</button>
         </form>
       </div>
-      <!-- <div class="card-footer">Footer</div> -->
     </div>
-
-    <!-- <span class="vl"></span> -->
   </div>
 </div>
-<!-- <form>
-  <label for="uname"> Name:</label><br />
-  <input type="text" id="uname" name="uname" value="" /><br />
-  <label for="uemail">Email:</label><br />
-  <input type="text" id="uemail" name="uemail" value="" /><br />
-  <label for="unumber">Number:</label><br />
-  <input type="text" id="unumber" name="unumber" value="" /><br />
-</form> -->

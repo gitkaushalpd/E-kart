@@ -12,6 +12,14 @@ const routes: Routes = [
     path: 'items',
     component: ItemListComponent,
   },
+  {
+    path: '',
+    component: UsersListComponent,
+  },
+  {
+    path: '*',
+    component: UsersListComponent,
+  },
 ];
 
 @NgModule({

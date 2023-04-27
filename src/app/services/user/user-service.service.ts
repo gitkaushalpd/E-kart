@@ -34,10 +34,24 @@ export class UserServiceService {
   }
 
   // define a method to delete all users ....
-  deleteAll() {
+  deleteUser(user: Userslist) {
+    let no = user.number;
     const httpHeaders = new HttpHeaders();
-    return this.http.delete<Userslist[]>('http://localhost:8080/deleteAll', {
+
+    const options = {
       headers: httpHeaders,
-    });
+      body: no,
+    };
+
+    return this.http.delete<Userslist>(
+      'http://localhost:8080/deleteUser',
+      options
+    );
+
+    // return this.http.post<Userslist>(
+    //   'http://localhost:8080/deleteUser',
+    //   no,
+    //   options
+    // );
   }
 }

@@ -19,4 +19,23 @@ export class ItemServiceService {
       headers: httpHeaders,
     });
   }
+
+  // define a  post method to save all items...
+  saveAllItems(items: Itemlist[]) {
+    const httpHeaders = new HttpHeaders();
+    return this.http.post<Itemlist[]>(
+      'http://localhost:8080/saveAllItems',
+      items,
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
+
+  deleteItem() {
+    const httpHeaders = new HttpHeaders();
+    return this.http.delete<Itemlist[]>('http://localhost:8080/deleteItem', {
+      headers: httpHeaders,
+    });
+  }
 }

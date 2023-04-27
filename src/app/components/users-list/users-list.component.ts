@@ -63,20 +63,24 @@ export class UsersListComponent implements OnInit {
   saveAllUsers(users: Userslist[]) {
     this.userService.saveAllUsers(users).subscribe((data: Userslist[]) => {
       console.log(data);
+      window.location.reload();
     });
   }
 
   // delete All users list
-  deleteAll() {
-    this.userService.deleteAll().subscribe((data: Userslist[]) => {
-      console.log(data);
+  deleteUser(user: Userslist) {
+    console.log(user);
+    this.userService.deleteUser(user).subscribe(() => {
+      window.location.reload();
     });
+
+    // this.users.pop();
+    // this.userService.deleteUser(user).subscribe((data: Userslist[]) => {
+    //   console.log(data);
+    // });
   }
 
   onSubmit(): void {
-    // Process checkout data here
-    //this.items = this.cartService.clearCart();
-
     console.log(this.kaushal);
 
     let user: any = new Userslist();
