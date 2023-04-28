@@ -16,6 +16,11 @@
               <td>{{ item.name }}</td>
               <td>{{ item.id }}</td>
               <td>{{ item.price }}</td>
+              <td>
+                <button class="btn" type="submit" (click)="deleteItem(item)">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -29,7 +34,7 @@
       <div class="card-header">Add Items</div>
       <div class="card-body">
         <!-- <h4>Add User</h4> -->
-        <form [formGroup]="Kaushal" (ngSubmit)="onSubmit()">
+        <form [formGroup]="itemform" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label class="control-label col-sm-3" for="name"> Name </label>
             <input id="name" type="text" formControlName="name" />
@@ -46,8 +51,6 @@
           </div>
 
           <button class="btn btn-primary" type="submit">Add</button>
-
-          <button class="btn btn-primary" type="submit">Delete</button>
         </form>
       </div>
     </div>

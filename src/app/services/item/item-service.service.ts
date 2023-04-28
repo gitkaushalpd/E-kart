@@ -32,10 +32,12 @@ export class ItemServiceService {
     );
   }
 
-  deleteItem() {
+  deleteItem(item: Itemlist) {
+    let id = item.id;
     const httpHeaders = new HttpHeaders();
-    return this.http.delete<Itemlist[]>('http://localhost:8080/deleteItem', {
+    return this.http.delete<Itemlist>('http://localhost:8080/deleteItem', {
       headers: httpHeaders,
+      body: id,
     });
   }
 }

@@ -39,7 +39,7 @@ export class UsersListComponent implements OnInit {
   // ];
 
   userlist: any = [];
-  kaushal = this.formBuilder.group(new Userslist());
+  userform = this.formBuilder.group(new Userslist());
   users: Userslist[] = [];
 
   constructor(
@@ -81,10 +81,10 @@ export class UsersListComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.kaushal);
+    console.log(this.userform);
 
     let user: any = new Userslist();
-    user = this.kaushal.value;
+    user = this.userform.value;
     console.log(user);
 
     this.users.push(user);
@@ -92,6 +92,6 @@ export class UsersListComponent implements OnInit {
     this.saveAllUsers(this.users);
 
     // form will be refreshed after add information
-    this.kaushal.reset();
+    this.userform.reset();
   }
 }

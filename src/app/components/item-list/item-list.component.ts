@@ -10,9 +10,9 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ItemListComponent implements OnInit {
   itemsList: Itemlist[] = [];
-  Kaushal = this.formBuilder.group(new Itemlist());
+  itemform = this.formBuilder.group(new Itemlist());
   items: Itemlist[] = [];
-
+  action: string = 'Add';
   constructor(
     private formBuilder: FormBuilder,
     private itemService: ItemServiceService
@@ -37,18 +37,19 @@ export class ItemListComponent implements OnInit {
     });
   }
 
-  deleteItem() {
-    this.itemService.deleteItem().subscribe((data: Itemlist[]) => {
-      console.log(data);
+  deleteItem(item: Itemlist) {
+    this.itemService.deleteItem(item).subscribe(() => {
+      console.log(item);
+      window.location.reload();
     });
   }
 
   // define submit method for form...
   onSubmit(): void {
-    console.log(this.Kaushal);
+    console.log(this.itemform);
 
     let items: any = new Itemlist();
-    items = this.Kaushal.value;
+    items = this.itemform.value;
     console.log(items);
 
     this.items.push(items);
@@ -56,6 +57,6 @@ export class ItemListComponent implements OnInit {
     this.saveAllItems(this.items);
 
     // form will be refreshed after add information
-    this.Kaushal.reset();
+    this.itemform.reset();
   }
 }

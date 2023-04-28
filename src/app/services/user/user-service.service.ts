@@ -43,15 +43,11 @@ export class UserServiceService {
       body: no,
     };
 
-    return this.http.delete<Userslist>(
-      'http://localhost:8080/deleteUser',
-      options
-    );
-
-    // return this.http.post<Userslist>(
+    // return this.http.delete<Userslist>(
     //   'http://localhost:8080/deleteUser',
-    //   no,
     //   options
     // );
+
+    return this.http.post<Userslist>('http://localhost:8080/deleteUser', no);
   }
 }
